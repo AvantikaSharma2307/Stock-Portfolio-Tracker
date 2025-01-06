@@ -3,6 +3,7 @@ import AddStock from '../../components/AddStock';
 import Stocklist from '../../components/Stocklist';
 import './Home.css'
 import Dashboard from '../../components/Dashboard';
+import Navbar from '../../components/Navbar/Navbar';
 
 export default function Home() {
     const[state,setState]=useState(1);
@@ -17,7 +18,8 @@ export default function Home() {
   }
     return (
         <>
-            <div className='flex flex-row'>
+        <Navbar/>
+            <div className='flex flex-row '>
                 <aside className='flex flex-col bg-violet-950 w-[20%] h-screen pt-32 px-8 gap-10 '>
                     <button class="button bg-violet-950"onClick={()=>{setState(1);}} >
                         <span class="lable ">Dashboard</span>
@@ -29,7 +31,7 @@ export default function Home() {
                         <span class="lable">Add Stock</span>
                     </button>
                 </aside>
-                <main className='w-screen'>
+                <main className='w-screen mt-44 mx-6'>
                     {content}
                 </main>
             </div>
